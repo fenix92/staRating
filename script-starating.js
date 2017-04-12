@@ -149,25 +149,26 @@
 		var SR_StarHover = function(star){
 			$("."+iname+' .staRating_star').each(function() {
 				if($(this).data('value')<=star.data('value')){
-					$(this).addClass('staRating_star_hover');
+					// depending on jquery version, .addClass and .removeClass don't work .....
+					$(this).attr('class',$(this).attr('class').replace('staRating_star_hover','')+' staRating_star_hover');
 				}else{
-					$(this).removeClass('staRating_star_hover');
+					$(this).attr('class',$(this).attr('class').replace('staRating_star_hover',''));
 				}
 			});
 		};
 		// function reseting the hover of the stars
 		var SR_StarRelease = function(star){
 			$("."+iname+' .staRating_star').each(function() {
-				$(this).removeClass('staRating_star_hover');
+				$(this).attr('class',$(this).attr('class').replace('staRating_star_hover',''));
 			});
 		};
 		// function called once we click on a star
 		var SR_setSelection = function(star){
 			$("."+iname+' .staRating_star').each(function() {
 				if($(this).data('value')<=star.data('value')){
-					$(this).addClass('staRating_selected');
+					$(this).attr('class',$(this).attr('class').replace('staRating_star_hover','')+' staRating_selected');
 				}else{
-					$(this).removeClass('staRating_selected');
+					$(this).attr('class',$(this).attr('class').replace('staRating_selected',''));
 				}
 			});
 			SR_callback(star.data('value'));
