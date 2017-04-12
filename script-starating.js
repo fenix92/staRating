@@ -19,6 +19,7 @@
 			var sr = $("#foo").staRating();
 			list of available methods
 			sr.val(3);	// set 3 as a new value of the staRating
+			sr.getVal();	// return the current value
 			
 		
 		CREDIT -
@@ -216,6 +217,10 @@
 				return false;
 			}
 			return true;
+		};
+		// return the current value
+		staRating.getVal = function() {
+			return $("."+iname+" svg.staRating_selected");
 		};
 		
 		return SR_intialize();
