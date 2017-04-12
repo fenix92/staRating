@@ -38,7 +38,7 @@ once the plugin is launched, at any moment you can access to this method :
     staRating.val(4);	// gives the value 4 to the stars
     staRating.getVal();	// return the current calue of the stars
 
-The rating don't allows half measures, only values from 1 (not 0) to numStar. I know there is a lot of plugins already for this, but I wanted an easy way to personalise the colors/size. Even the star (have to modify the polygon value). Please also note than the .CSS file is loaded in the script you can modify the link inside (but loading the CSS file normaly is working too !)
+The rating don't allows half measures, only values from 1 (not 0) to numStar. I know there is a lot of plugins already for this, but I wanted an easy way to personalise the colors/size. Even the star (have to modify the polygon value). **BE AWARE** that this script uses the jquery method .addClass() & .removeClass(), who works on svg **ONLY** since 1.12/2.2, make sure you have the correct version of jquery. Please also note than the .CSS file is loaded in the script you can modify the link inside (but loading the CSS file normaly is working too !)
 
 
 ### Ideas of upgrade :
