@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>test staRating</title>
+		<meta http-equiv="Content-Script-Type" content="text/javascript">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<style media="screen" type="text/css">
+html,body{height:100%;padding:0;margin:0;}
+		</style>
+	</head>
+	<body bgcolor="white">
+		<p>The color of the stars can be edited in the css file</p>
+		<p>The size of the stars & border of the stars can be edited as argument when calling the .staRating plugin. (cf. source code for example)</p>
+		<div id="foo">anything inside of this div will be removed !</div>
+		<input type="button" id="foo_reset" value="reset firt staRating"/>
+		<div id="foo_answer" style="height:30px;margin-bottom:50px;"></div>
+		<div id="bar"></div>
+		<script type="text/javascript">
+ //<![CDATA[
+$(document).ready(function(){
+	// example of the declaration of the plugin, with all options :
+ 	var sr1 = $("#foo").staRating({
+		numStar	: 10,
+		widthBorder : 10,
+		heightStar : 100,
+		value : 3,
+		callback : 'mySuperFunction'	/* by adding this line, you need to create somewhere in your page a javascript function called "mySuperFunction" (cf. below) */
+	});
+	// example of function to change the current value of a specific staRating 
+	$("#foo_reset").click(function() {
+		sr1.val(0);
+	});
+	// example of plugin with all default values :
+ 	var sr2 = $("#bar").staRating();
+});
+// example of function called once the value of the star changed. the first argument is the newValue, the second is the jQuery element container (here = $("#foo"))
+function mySuperFunction(newValue,parent){
+	$("#"+parent.attr('id')+"_answer").html("new value : "+newValue);
+}
+//]]>
+		</script>
+		<script type="text/javascript" src="script-starating.js"></script>
+	</body>
+</html>

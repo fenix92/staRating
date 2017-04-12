@@ -1,0 +1,42 @@
+/*
+		=================================
+						
+			CSS StarRating	
+						
+	 	=================================
+
+								*/
+
+.staRating_conteneur{
+	background-color:transparent;
+}
+.staRating_conteneur svg,
+.staRating_conteneur svg.staRating_default{			/* default color of the stars */
+	background-color:transparent;
+	fill:yellow;
+	stroke:black
+}
+.staRating_conteneur .staRating_star_hover{			/* color of the stars when mouse is over it */
+	fill:orange!important;
+	stroke:orange!important;
+}
+.staRating_conteneur svg.staRating_selected{			/* color of the stars when mouse click on it */
+	fill:red;
+	stroke:red
+}
+
+/* to have different colors, just change the container class and override the values ! */
+
+#bar svg,
+#bar svg.staRating_default{
+	fill:green;
+	stroke:black
+}
+#bar .staRating_star_hover{
+	fill:lightgreen!important;
+	stroke:black!important;
+}
+#bar svg.staRating_selected{
+	fill:black!important;
+	stroke:black!important;
+}
