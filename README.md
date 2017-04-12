@@ -6,7 +6,7 @@ online-example : http://www.clamart-natation.com/starating/
 
 Please consider the following html :
 
-    <div id="foo"</div>
+    <div id="foo"></div>
 
 To force this div to receive the stars, just insert :
 
@@ -31,6 +31,7 @@ for a quick explaination,
     widthBorder : the width (in pixels) of the border of each stars (0 <= x <= 50)
     heightStar  : the height/width of each stars (1 <= x <= 400). Note that this value is including the widthBorder already.
     value       : the default value of the plugin (0 <= x <= numStar).
+    callback    : this is the name of the function called everytime the value changed. So you NEED to create it. It will be called giving 2 aruments : the first is the new value, the second is the jquery selector of the original div (=container of the stars). In our example, its returning  $("#foo")
 
 once the plugin is launched, at any moment you can access to this method :
 
